@@ -5,4 +5,5 @@ from .models import Post
 
 class Blog(ListView):
     model = Post
+    paginate_by = 3
 
