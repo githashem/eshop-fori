@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title"><a href="/products">همه</a></h4>
+    </div>
+</div>
+{% for category in categories %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title"><a href="{% url 'category' name_category=category.slug %}">{{ category.title }}</a></h4>
+    </div>
+</div>
+{% endfor %}

@@ -1,0 +1,34 @@
+{% extends 'shared/_MainLayout.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="contact-form">
+                    <div class="status alert alert-success" style="display: none"></div>
+                    <form id="main-contact-form" class="contact-form row" name="contact-form" method="post" action="/dashboard/edit/">
+                        {% csrf_token %}
+
+                        <div class="form-group col-md-6">
+                            {{ edit_user_form.first_name }}
+                            {% for error in edit_user_form.first_name.errors %}
+                                <p class="text-danger"> {{ error }} </p>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {{ edit_user_form.last_name }}
+                            {% for error in edit_user_form.last_name.errors %}
+                                <p class="text-danger"> {{ error }} </p>
+                            {% endfor %}
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <input type="submit" name="submit" class="btn btn-primary pull-right" value="ذخیره">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {% include 'account/user-sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}
