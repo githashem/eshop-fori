@@ -15,7 +15,7 @@ def footer(request):
 
 
 def header(request):
-    context = {}
+    context = {'options': Settings.object()}
     return render(request, 'shared/Header.html', context=context)
 
 
