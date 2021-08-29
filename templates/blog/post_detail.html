@@ -8,9 +8,9 @@
 
 				<div class="col-sm-9">
 					<div class="blog-post-area">
-						<h2 class="title text-center">خبـر شمـاره 1</h2>
+						<h2 class="title text-center">خبر شماره {{ post.id }} </h2>
 						<div class="single-blog-post">
-							<h3>خبـر شمـاره 1 - خبـر</h3>
+							<h3>{{ post.title }}</h3>
 							<div class="post-meta">
 								<ul>
 									<li><i class="fa fa-user"></i> کاربـر 1</li>
@@ -26,16 +26,15 @@
 								</span>
 							</div>
 							<a href="">
-								<img src="{% static 'images/blog/blog-one.jpg' %}" alt="">
+								<img src="{{post.image.url}}" alt="">
 							</a>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده ازلورملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده ازلورملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-							<div class="pager-area">
+							<p>{{ post.description }}</p>
+							{% comment %}<div class="pager-area">
 								<ul class="pager pull-left">
 									<li><a href="#">قبلی</a></li>
 									<li><a href="#">بعـدی</a></li>
 								</ul>
-							</div>
+							</div>{% endcomment %}
 						</div>
 					</div><!--/blog-post-area-->
 
@@ -165,109 +164,7 @@
 					</div><!--/Repaly Box-->
 				</div>
 
-				<div class="col-sm-3">
-					<div class="left-sidebar">
-						<h2>دسته بندی محصولات</h2>
-						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											دسته 1
-										</a>
-									</h4>
-								</div>
-								<div id="sportswear" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="">محصول 1 </a></li>
-											<li><a href="">محصول 2 </a></li>
-											<li><a href="">محصول 3 </a></li>
-											<li><a href="">محصول 4</a></li>
-											<li><a href="">محصول 5</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#mens">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											دسته 2
-										</a>
-									</h4>
-								</div>
-								<div id="mens" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="">محصول 1 </a></li>
-											<li><a href="">محصول 2 </a></li>
-											<li><a href="">محصول 3 </a></li>
-											<li><a href="">محصول 4</a></li>
-											<li><a href="">محصول 5</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
 
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">محصول 1</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">محصول 2</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">محصول 3</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">محصول 4</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">محصول 5</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">محصول 6</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">محصول 7</a></h4>
-								</div>
-							</div>
-						</div><!--/category-productsr-->
-
-						<div class="brands_products"><!--brands_products-->
-							<h2>برنـد ها</h2>
-							<div class="brands-name">
-								<ul class="nav nav-pills nav-stacked">
-									<li><a href=""> <span class="pull-left">(50)</span>برنـد 1</a></li>
-									<li><a href=""> <span class="pull-left">(56)</span>برنـد 2</a></li>
-									<li><a href=""> <span class="pull-left">(27)</span>برنـد 3</a></li>
-									<li><a href=""> <span class="pull-left">(32)</span>برنـد 4</a></li>
-									<li><a href=""> <span class="pull-left">(5)</span>برنـد 5</a></li>
-								</ul>
-							</div>
-						</div><!--/brands_products-->
-
-						<div class="shipping text-center"><!--shipping-->
-							<img src="{% static 'images/home/shipping.jpg' %}" alt="" />
-						</div><!--/shipping-->
-
-					</div>
-				</div>
 
 			</div>
 		</div>
