@@ -143,7 +143,7 @@
                             <img src="{{post.image.url}}" alt="">
                         </a>
                         <p>{{ post.description }}</p>
-                        <a class="btn btn-primary" href="">ادامـه مطلب</a>
+                        <a class="btn btn-primary" href="{% url 'post' pk=post.id %}">ادامـه مطلب</a>
                     </div>
                     {% endfor %}
 
