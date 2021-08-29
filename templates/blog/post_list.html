@@ -142,7 +142,7 @@
                         <a href="">
                             <img src="{{post.image.url}}" alt="">
                         </a>
-                        <p>{{ post.description }}</p>
+                        <p>{{ post.description|truncatechars:255 }}</p>
                         <a class="btn btn-primary" href="{% url 'post' pk=post.id %}">ادامـه مطلب</a>
                     </div>
                     {% endfor %}
