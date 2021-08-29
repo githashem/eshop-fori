@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 import os
 
 
@@ -9,6 +10,12 @@ def generate_name_file(instance, file_path):
     return f"posts/image/{instance.title}{ext}"
 
 
+class PostManager(models.Manager):
+    def search(self, s):
+        lookup = (Q(title__icontains=s) | Q(description__icontains=s))
+        return self.filter(lookup, is_publish=True).distinct()
+
+
 class Post(models.Model):
     title = models.CharField(max_length=150, verbose_name="عنوان")
     image = models.ImageField(blank=True, null=True, upload_to=generate_name_file, verbose_name="تصویر")
@@ -17,6 +24,8 @@ class Post(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+    objects = PostManager()
 
     class Meta:
         verbose_name = "خبر"

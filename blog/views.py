@@ -19,3 +19,14 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
     queryset = Post.objects.all().filter(is_publish=True)
+
+
+class SearchPostListView(ListView):
+    template_name = 'blog/post_list.html'
+    paginate_by = 3
+
+    def get_queryset(self):
+        s = self.request.GET.get("s")
+        if s is not None:
+            return Post.objects.search(s)
+        return Post.objects.filter(is_publish=True)
